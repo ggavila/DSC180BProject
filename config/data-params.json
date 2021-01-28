@@ -1,4 +1,5 @@
 {
     "outpath":"data/raw",
-    "category":["pageviews" ]
+    "category":["pageviews"],
+    "articles":"data/raw/top1000.csv"
 }
