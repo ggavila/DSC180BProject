@@ -1,3 +1,4 @@
 {
-    "outpath":"data/raw"
+    "outpath":"data/raw",
+    "category":["pageviews" ]
 }

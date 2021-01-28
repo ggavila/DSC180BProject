@@ -2,6 +2,7 @@
 
 import sys
 import json
+from etl import *
 
 
 def main(targets):
