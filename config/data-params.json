@@ -2,6 +2,7 @@
     "outpath":"data/raw",
     "category":["pageviews"],
     "articles":"data/raw/top1000.csv",
-    "pageview":"data/pageview"
+    "pageview":"data/pageview",
+    "eda":"data/eda"
 
 }

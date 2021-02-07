@@ -130,5 +130,5 @@ dmypy.json
 
 #ignore more data
 data/
-
+test/
 
