@@ -14,6 +14,8 @@ def top_1000():
     page=BeautifulSoup(response.text, 'html.parser')
     table=page.find_all('table')[3]
     readable=pd.read_html(table.prettify())
+    if not os.path.exists('data/raw'):
+        os.makedirs('data/raw')
     readable[0].to_csv("data/raw/top1000.csv", index=False)
     return
 
@@ -72,7 +74,10 @@ def pageview_csv(data, outpath):
             os.makedirs(out_path)
         out_file=os.path.join(out_path,csv_path)
         result=api_getpageview(j)
-        result.to_csv(out_file, index=False)
+        try:
+            result.to_csv(out_file, index=False)
+        except Exception as e:
+            counter=counter
         counter +=1
         if counter%100==0:
             print("number of articles' pageviews made", counter)
