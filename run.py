@@ -13,9 +13,10 @@ def main(targets):
         data_cfg=json.load(fh)
         
       top_1000()
-      tops=pd.read_csv(data_cfg['articles'])['Page title'].values
-      for i in tops:
-        print(i)
+      pageview_csv(data_cfg['articles'], data_cfg['data/pageview'])
+    if 'test' in targets:
+      pageview_csv("test/test.csv", "test/pageview")
+
     return
 
 
