@@ -58,6 +58,7 @@ def pageview_csv(data, outpath):
         i=i.replace(" ", "_")
         i=i.replace("/", "%2F")
         arranged.append(i)
+    counter=0
     for j in arranged:
         csv_path=j+"_pageview.csv"
         out_path=outpath
