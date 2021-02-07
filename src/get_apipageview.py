@@ -29,11 +29,13 @@ def api_getpageview(article):
 
     return result
 
-def pageview_csv(data):
+
+def pageview_csv(data, outpath):
     '''
     read data and generate csv to data/pageview
 
     data: road to data
+    outpath: output path to data
 
     return: null, but output csv to data/pageview
     '''
@@ -41,14 +43,17 @@ def pageview_csv(data):
     arranged=[]
     for i in source:
         i=i.replace(" ", "_")
+        i=i.replace("/", "%2F")
         arranged.append(i)
     for j in arranged:
         csv_path=j+"_pageview.csv"
-        out_path='data/pageview'
+        out_path=outpath
         if not os.path.exists(out_path):
             os.makedirs(out_path)
         out_file=os.path.join(out_path,csv_path)
         result=api_getpageview(j)
         result.to_csv(out_file, index=False)
-        print("Successfully make pageview of ", j)
+        counter +=1
+        if counter%100==0:
+            print("number of articles' pageviews made", counter)
     return
