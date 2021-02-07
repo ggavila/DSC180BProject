@@ -13,7 +13,7 @@ def main(targets):
         data_cfg=json.load(fh)
         
       top_1000()
-      pageview_csv(data_cfg['articles'], data_cfg['data/pageview'])
+      pageview_csv(data_cfg['articles'], data_cfg['pageview'])
     if 'test' in targets:
       pageview_csv("test/test.csv", "test/pageview")
 
