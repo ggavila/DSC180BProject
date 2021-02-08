@@ -30,7 +30,15 @@ def get_top_10_average_daily_view(dic, output):
     if not os.path.exists(output):
         os.makedirs(output)
     outfile=os.path.join(output, 'top10average_pageview.csv')
+    outimage=os.path.join(output, 'top10pageview.png')
     top10er.to_csv(outfile, index=False)
+    plt.figure()
+    plt.bar(x=top10er['article'], height=top10er['average_view'])
+    plt.xticks(rotation=90)
+    plt.xlabel('article')
+    plt.ylabel('average_view')
+    plt.savefig(outimage, bbox_inches='tight')
+    plt.close()
     return top10er
 
 def plot_top10(dict1,dict2, outpath):
@@ -48,9 +56,10 @@ def plot_top10(dict1,dict2, outpath):
         putpath=os.path.join(outpath, outer)
         plt.figure()
         plt.plot(dater, df['pageview'].values)
+        plt.xticks(rotation=45)
         plt.xlabel('date')
         plt.ylabel('daily_pageview')
-        plt.savefig(putpath)
+        plt.savefig(putpath, bbox_inches='tight')
         plt.close()
     return
         
