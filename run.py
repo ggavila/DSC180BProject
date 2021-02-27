@@ -11,9 +11,10 @@ def main(targets):
         
       with open('config/data-params.json') as fh:
         data_cfg=json.load(fh)
-        
       top_1000()
       pageview_csv(data_cfg['articles'], data_cfg['pageview'])
+      for i in data_cfg['essential']:
+        get_revisions(i, "data/revisions")
     if 'eda' in targets:
          
       with open('config/data-params.json') as fh:
@@ -22,7 +23,11 @@ def main(targets):
       top10er=get_top_10_average_daily_view(router, data_cfg['eda'])
       plot_top10(top10er, router, data_cfg['eda'])
     if 'test' in targets:
+      with open('config/data-params.json') as fh:
+        data_cfg=json.load(fh)
       pageview_csv("test/test.csv", "test/pageview")
+      for i in data_cfg['essential']:
+        get_revisions(i, "data/revisions")
       router=get_dfs('test/pageview')
       top10er=get_top_10_average_daily_view(router,'test/eda')
       plot_top10(top10er,router,'test/eda')
