@@ -1,6 +1,7 @@
 # DSC180BProject
 
-This is the Wikipedia project working on its performance on providing COVID-19 pandemic information
+This is the Wikipedia project working on its performance on providing COVID-19 pandemic information. Most of our data generated can be seen using certain target, but 
+there are also some analysis we made directly using notebook.
 
 ### Project Team Members:
 - Yiheng Ye, yiy291@ucsd.edu
@@ -10,15 +11,20 @@ This is the Wikipedia project working on its performance on providing COVID-19 p
 ### Requirements:
 - python 3.8
 - pandas 1.1.0
+- wordcloud 1.8.1
+- wikipedia 1.4.0
+- sklearn 0.24.1
 
 ### Code, Purpose, and Guideline:
 
 - run.py: If target='data': Get top 1000 popular articles relating COVID-19 from Wikipedia. Get the pageview data for them in 2020.
           If target='eda': Get top10 article with top average daily pageview and plot their daily views
-          If target='test': Runs test program about data: getting pageview on the test data and eda.
+          If target='revision": Get revision history for important pages and doing analysis with LDA model on them
+          If target='test': Runs test program about data: getting pageview on the test data and eda, getting revision data and doing LDA model on them.
 - elt.py: the library for the data pipeline, see the documentation for detailed functions of every function writtened. Basically
           these functions are used to fulfill the job done in run.py.
 - eda.py: the library for doing eda on data.
+- revision.py: the library for analysis revision data
 - config/data-params.json: it stores the links of the source data as well as the output path for raw data.
 - code in src/data: the source code to fulfill the functions about processing data. The current usable files are get_data.py(getting top1000 articles'
   basic information) and get_apipageview.py(getting pageview from given article information csvs)
@@ -26,7 +32,9 @@ This is the Wikipedia project working on its performance on providing COVID-19 p
 ### Notebooks
 The notebook file is primary serving as our original test base for code development. Additionally, it also has a notebook called Project EDA Single Webpage.ipynb which we investigate "COVID-19 pandemic data" page deeply.
 
+There is also another notebook called "Word Clouds.ipynb" which produces word clouds on Wikipedia Coronavirus page, JHU page, and WHO page.
+
 ## Responsibilities:
 - Yiheng Ye set up the structure of the project and the structure of run.py. He also wrote get_data.py and get_apipageview.py and put them into the etl.py. He also 
   wrote eda.py and eda_pageview.py
-- Gabrielle Avila constructed our report and made deep analysis into the "COVID-19 pandemic data" page.
+- Gabrielle Avila constructed our report and made deep analysis into the "COVID-19 pandemic data" page. She also made the "Word Clouds.ipynb"
