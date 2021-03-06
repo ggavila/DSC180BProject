@@ -2,7 +2,7 @@
 
 
 This is the Wikipedia project working on its performance on providing COVID-19 pandemic information. Most of our data generated can be seen using certain target, but 
-there are also some analysis we made directly using notebook.
+there are also some analysis we made through notebook.
 
 ### Project Team Members:
 - Yiheng Ye, yiy291@ucsd.edu
@@ -15,6 +15,8 @@ there are also some analysis we made directly using notebook.
 - wordcloud 1.8.1
 - wikipedia 1.4.0
 - sklearn 0.24.1
+- gensim 3.8.3
+- nltk 3.5
 
 ### Code, Purpose, and Guideline:
 
@@ -35,7 +37,10 @@ The notebook file is primary serving as our original test base for code developm
 
 There is also another notebook called "Word Clouds.ipynb" which produces word clouds on Wikipedia Coronavirus page, JHU page, and WHO page.
 
+The "top_model.ipynb" generated LDA model for the LDA model on article 'Coronavirus".
+
 ## Responsibilities:
 - Yiheng Ye set up the structure of the project and the structure of run.py. He also wrote get_data.py and get_apipageview.py and put them into the etl.py. He also 
   wrote eda.py and eda_pageview.py
 - Gabrielle Avila constructed our report and made deep analysis into the "COVID-19 pandemic data" page. She also made the "Word Clouds.ipynb"
+- Michael Lam made LDA model analysis on the page "Coronavirus"
