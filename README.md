@@ -1,8 +1,8 @@
 # DSC180BProject: Wikipedia’s Response to the COVID-19 Pandemic 
 
 
-This is the Wikipedia project working on its performance on providing COVID-19 pandemic information. Most of our data generated can be seen using certain target, but 
-there are also some analysis we made through notebook.
+This is the Wikipedia project working on its performance on providing COVID-19 pandemic information. Most of our data generated can be seen using certain targets, but 
+there are also some analysis we made through notebook and we will specified those notebooks in the notebooks seciton.
 
 ### Project Team Members:
 - Yiheng Ye, yiy291@ucsd.edu
@@ -37,7 +37,7 @@ The notebook file is primary serving as our original test base for code developm
 
 There is also another notebook called "Word Clouds.ipynb" which produces word clouds on Wikipedia Coronavirus page, JHU page, and WHO page.
 
-The "top_model.ipynb" generated LDA model for the LDA model on article 'Coronavirus".
+The "top_model.ipynb" generated LDA model for the LDA model on article 'Coronavirus", and this model needed to be open in a notebook to get visualization.
 
 ## Responsibilities:
 - Yiheng Ye set up the structure of the project and the structure of run.py. He also wrote get_data.py and get_apipageview.py and put them into the etl.py. He also 
