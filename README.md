@@ -1,4 +1,5 @@
-# DSC180BProject
+# DSC180BProject: Wikipedia’s Response to the COVID-19 Pandemic 
+
 
 This is the Wikipedia project working on its performance on providing COVID-19 pandemic information. Most of our data generated can be seen using certain target, but 
 there are also some analysis we made directly using notebook.
