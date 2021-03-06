@@ -82,3 +82,42 @@ def pageview_csv(data, outpath):
         if counter%100==0:
             print("number of articles' pageviews made", counter)
     return
+
+def get_revisions(title,outpath):
+    S = requests.Session()
+
+    URL = "https://en.wikipedia.org/w/api.php"
+    sttime="2020-12-31T00:00:00Z"
+    counter=0
+    judge=True
+    output=outpath
+    if not os.path.exists(output):
+        os.makedirs(output)
+    while judge:
+
+        PARAMS = {
+            "action": "query",
+            "prop": "revisions",
+            "rvprop": "timestamp|user|comment",
+            "rvslots": "main",
+            "rvend":"2020-01-01T00:00:00Z",
+            "rvlimit":"500",
+            "formatversion": "2",
+            "format": "json"
+        }
+        PARAMS['titles']=title
+        PARAMS['rvstart']=sttime
+
+        R = S.get(url=URL, params=PARAMS)
+        DATA = R.json()
+        history=DATA['query']['pages'][0]['revisions']
+        df=pd.DataFrame(history)
+        outfile=title+'_revision_'+str(counter)+'.csv'
+        outroute=os.path.join(output, outfile)
+        df.to_csv(outroute, index=False)
+        if len(df)<500:
+            judge=False
+        else:
+            counter +=1
+            sttime=df['timestamp'].values[-1]
+    return 
