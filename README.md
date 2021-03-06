@@ -30,6 +30,7 @@ there are also some analysis we made through notebook and we will specified thos
           these functions are used to fulfill the job done in run.py.
 - eda.py: the library for doing eda on data.
 - revision.py: the library for analysis revision data
+- word.py: the library for creating wordcloud
 - config/data-params.json: it stores the links of the source data as well as the output path for raw data.
 - code in src/data: the source code to fulfill the functions about processing data. The current usable files are get_data.py(getting top1000 articles'
   basic information) and get_apipageview.py(getting pageview from given article information csvs)

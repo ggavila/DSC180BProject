@@ -6,7 +6,7 @@ import pandas as pd
 from etl import *
 from eda import *
 from revision import *
-from wordcloud import *
+from word import *
 
 def main(targets):
     if 'data' in targets:

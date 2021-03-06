@@ -31,7 +31,7 @@ def generate_cloud(text, output,name):
     namer=name+'.png'
     pather=os.path.join(output,namer)
     
-    wordcloud.to_file(namer)
+    wordcloud.to_file(pather)
 
     return
 
@@ -44,7 +44,7 @@ def generate_cloud_pink(text, output,name):
     namer=name+'_pink.png'
     pather=os.path.join(output,namer)
     
-    wordcloud.to_file(namer)
+    wordcloud.to_file(pather)
 
     return
 def gener(output):
