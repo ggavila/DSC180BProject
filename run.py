@@ -6,6 +6,7 @@ import pandas as pd
 from etl import *
 from eda import *
 from revision import *
+from wordcloud import *
 
 def main(targets):
     if 'data' in targets:
@@ -27,6 +28,9 @@ def main(targets):
       result=get_all_df('data/revisions')
       get_user_activities(result, 'data/result')
       LDA(result,'data/result')
+    if 'word' in targets:
+      gener('data/result')
+
     if 'test' in targets:
       with open('config/data-params.json') as fh:
         data_cfg=json.load(fh)
@@ -39,6 +43,7 @@ def main(targets):
       result=get_all_df('test/revisions')
       get_user_activities(result, 'test/result')
       LDA(result, 'test/result')
+      gener('test/result')
 
     return
 

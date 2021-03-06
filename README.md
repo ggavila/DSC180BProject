@@ -22,8 +22,10 @@ there are also some analysis we made through notebook and we will specified thos
 
 - run.py: If target='data': Get top 1000 popular articles relating COVID-19 from Wikipedia. Get the pageview data for them in 2020.
           If target='eda': Get top10 article with top average daily pageview and plot their daily views
-          If target='revision": Get revision history for important pages and doing analysis with LDA model on them
-          If target='test': Runs test program about data: getting pageview on the test data and eda, getting revision data and doing LDA model on them.
+          If target='revision": Get revision history for important pages and doing analysis with LDA model on them.
+          if target='word': Generates word cloud for Wikipedia, JHU, and WHO
+          If target='test': Runs test program about data: getting pageview on the test data and eda, getting revision data and doing LDA model on them, and 
+          generating word cloud.
 - elt.py: the library for the data pipeline, see the documentation for detailed functions of every function writtened. Basically
           these functions are used to fulfill the job done in run.py.
 - eda.py: the library for doing eda on data.
@@ -43,4 +45,4 @@ The "top_model.ipynb" generated LDA model for the LDA model on article 'Coronavi
 - Yiheng Ye set up the structure of the project and the structure of run.py. He also wrote get_data.py and get_apipageview.py and put them into the etl.py. He also 
   wrote eda.py and eda_pageview.py
 - Gabrielle Avila constructed our report and made deep analysis into the "COVID-19 pandemic data" page. She also made the "Word Clouds.ipynb"
-- Michael Lam made LDA model analysis on the page "Coronavirus"
+- Michael Lam made LDA model analysis on the page "Coronavirus" and put them into the notebook "top_model.ipynb".
